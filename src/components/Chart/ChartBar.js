@@ -1,20 +1,21 @@
 import React from 'react'
 
-const ChartBar = (props) => {
-  let barFilHeight = '0%';
-  if (props.maxValue > 0 ){
-    barFilHeight =Math.round((props.value / props.maxValue) * 100) + '%';
+export default function ChartBar() {
+  let barFillHeight = '0%';
+  if(props.maxValue>0)
+  {
+      barFillHeight = MATH.round((props.value/props.maxValue)*100) + '%';
   }
-  return (
-    <div>
-      <div>
-        <div className='chart-bar_fill' style={{height: barFilHeight}}>
-
-        </div>
+    return (
+      <div className='chart-bar'>
+          <div className='chart-bar_inner'>
+              <div className='chart-bar_fill' style={{'height': barFillHeight}}></div>
+          </div>
+          <div className='chart-bar_label'> 
+              {props.label}
+          </div>
       </div>
-      <div className='chart-bar_label'>{props.label}</div>
-    </div>
-  )
+    );
 }
 
 export default ChartBar
